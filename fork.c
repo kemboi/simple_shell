@@ -1,6 +1,3 @@
-#include <unistd.h>
-#include <string.h>
-#include <sys/wait.h>
 #include "header.h"
 
 /**
@@ -19,7 +16,7 @@ void shellexec(char **args, char **envp)
 		childpid = fork();
 		if (childpid == 0)
 		{
-			if (execve(args[0], args, envp) == -1)
+			if (execve(_getpath(args[0]), args, envp) == -1)
 			{
 				perror("Error");
 				exit(0);
