@@ -6,9 +6,10 @@
  * main - function to execute the simple shell program
  * @argc: number of arguments
  * @argv: pointer to store the array of arguments
+ * @envp: environmental variables
  * Return: 1 or 0
  */
-int main(int argc, char **argv)
+int main(int argc, char **argv, char **envp)
 {
 	char *prompt = "(S_Shell) $ ", *line_input = NULL;
 	size_t size = 0;
@@ -32,7 +33,7 @@ int main(int argc, char **argv)
 		argv = getToken(line_input, delimiter, input);
 		while (argv[i] != NULL)
 		{
-			shellexec(argv);
+			shellexec(argv, envp);
 			free(argv[i]);
 			i++;
 		}
