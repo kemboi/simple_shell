@@ -57,5 +57,5 @@ int check_builtin(char **args)
 			return ((*function_ptr_builtin[idx])(args));
 		}
 	}
-	return (1);
+	return (0);
 }
