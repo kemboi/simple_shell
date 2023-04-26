@@ -21,7 +21,7 @@ int funct_env(char **args)
 	int idx;
 
 	(void) **args;
-		for (idx = 0; environ[idx]; idx++)
+		for (idx = 0; environ[idx] != NULL; idx++)
 			printf("%s\n", environ[idx]);
 	return (0);
 }
