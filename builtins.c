@@ -22,6 +22,9 @@ int funct_env(char **args)
 
 	(void) **args;
 		for (idx = 0; environ[idx] != NULL; idx++)
-			printf("%s\n", environ[idx]);
+		{
+			myprint(environ[idx], STDOUT_FILENO);
+			myprint("\n", STDOUT_FILENO);
+		}
 	return (0);
 }
